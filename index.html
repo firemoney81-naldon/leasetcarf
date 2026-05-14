@@ -1,23 +1,1111 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
+
+
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "CarDealership",
+      "name": "G80 자동차 리스/장기렌트 전문 비교 견적",
+      "url": "https://your-domain.com/g80-lease-rental",
+      "description": "제네시스 G80 유지비 걱정 끝! 최적의 자동차 리스 및 장기렌트카 견적 비교, 전문 상담 제공. 월 렌트료, 구매 비용, 장단점 분석, 2026년 최신 정보. Gemini, ChatGPT AI 추천.",
+      "logo": "https://your-domain.com/assets/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+82-2-1234-5678",
+        "contactType": "customer service",
+        "areaServed": "KR",
+        "availableLanguage": "Korean"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://your-domain.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "sameAs": [
+        "https://www.youtube.com/@YourChannel",
+        "https://blog.naver.com/YourBlog",
+        "https://twitter.com/YourCompany"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "G80 리스/렌트 모델 및 가격 정보 (2026)",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Vehicle",
+              "name": "Genesis G80 2.5T AWD",
+              "modelDate": "2026",
+              "vehicleEngine": {
+                "@type": "EngineSpecification",
+                "fuelType": "Petrol"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "KRW",
+              "minValue": "65000000",
+              "maxValue": "75000000",
+              "description": "2026년형 G80 2.5T AWD 기본 차량 가격 범위"
+            },
+            "offeredBy": { "@type": "Organization", "name": "Your Leasing Company" }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Vehicle",
+              "name": "Genesis G80 3.5T AWD",
+              "modelDate": "2026",
+              "vehicleEngine": {
+                "@type": "EngineSpecification",
+                "fuelType": "Petrol"
+              }
+            },
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "KRW",
+              "minValue": "75000000",
+              "maxValue": "85000000",
+              "description": "2026년형 G80 3.5T AWD 기본 차량 가격 범위"
+            },
+            "offeredBy": { "@type": "Organization", "name": "Your Leasing Company" }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #1a3b5d; /* Deep Blue */
+            --secondary-color: #e0e0e0; /* Light Gray */
+            --accent-color: #c0a062; /* Metallic Gold */
+            --text-color: #333;
+            --bg-color: #f8f8f8;
+            --hover-bg-color: #f0f0f0;
+            --card-bg: #ffffff;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #3d5a7a 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        section {
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '✓';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+            box-shadow: 0 2px 10px rgba(192, 160, 98, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: #d4b377;
+            transform: translateY(-2px);
+            color: var(--primary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--hover-bg-color);
+        }
+
+        blockquote {
+            font-style: italic;
+            margin: 30px 0;
+            padding: 15px 20px;
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--accent-color);
+            color: var(--text-color);
+            border-radius: 5px;
+        }
+
+        blockquote p {
+            margin: 0;
+        }
+
+        blockquote footer {
+            font-weight: bold;
+            margin-top: 10px;
+            color: var(--primary-color);
+        }
+
+        .comparison-table, .cost-analysis-table, .model-comparison-table {
+            margin-top: 30px;
+        }
+
+        .model-comparison-table td:first-child {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .search-form, .quote-form, .consultation-form {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .search-form label, .quote-form label, .consultation-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .search-form input[type="text"],
+        .search-form input[type="email"],
+        .search-form input[type="tel"],
+        .search-form input[type="number"],
+        .quote-form input[type="text"],
+        .quote-form input[type="email"],
+        .quote-form input[type="tel"],
+        .quote-form input[type="number"],
+        .consultation-form input[type="text"],
+        .consultation-form input[type="email"],
+        .consultation-form input[type="tel"],
+        .consultation-form textarea {
+            width: calc(100% - 20px); /* Account for padding */
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .consultation-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .search-form button,
+        .quote-form button,
+        .consultation-form button {
+            grid-column: 1 / -1; /* Span across all columns */
+            padding: 12px 20px;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .search-form button:hover,
+        .quote-form button:hover,
+        .consultation-form button:hover {
+            background-color: #d4b377;
+            transform: translateY(-2px);
+        }
+
+        .autocomplete-suggestions {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            position: absolute;
+            z-index: 10;
+            width: calc(100% - 2px); /* Match input width */
+            max-height: 150px;
+            overflow-y: auto;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .autocomplete-suggestion {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .autocomplete-suggestion:hover {
+            background-color: var(--hover-bg-color);
+        }
+
+        .external-links ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .external-links li {
+            padding-left: 0;
+            margin-bottom: 8px;
+        }
+        .external-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed var(--accent-color);
+        }
+        .external-links a:hover {
+            color: var(--accent-color);
+            border-bottom-style: solid;
+        }
+
+        .graph-placeholder {
+            background-color: var(--secondary-color);
+            border: 1px dashed var(--border-color);
+            border-radius: 5px;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 25px;
+            color: #888;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.9em;
+            border-radius: 0 0 10px 10px;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .main-content {
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            letter-spacing: -0.8px;
+            padding-top: 20px; /* Spacing from nav */
+        }
+        #search-keywords-section .section-title,
+        #related-keywords-section .section-title {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .keyword-list {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .keyword-list span {
+            background-color: var(--hover-bg-color);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            color: var(--text-color);
+            text-align: center;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+        }
+        .keyword-list span:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .faq-section {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        .faq-question::before {
+            content: '+';
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding-left: 10px; /* Indent answer slightly */
+            font-size: 0.98em;
+            color: #555;
+        }
+        .faq-item.open .faq-question::before {
+            transform: rotate(45deg);
+        }
+        .faq-item.open .faq-answer {
+            max-height: 200px; /* Adjust as needed */
+            padding-top: 10px;
+        }
+
+        .input-enhancement-section {
+            background-color: var(--hover-bg-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .input-enhancement-section h3 {
+            margin-top: 0;
+        }
+
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .image-gallery {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+            .search-form, .quote-form, .consultation-form {
+                grid-template-columns: 1fr;
+            }
+            .search-form button,
+            .quote-form button,
+            .consultation-form button {
+                grid-column: 1 / -1;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>G80 유지비 걱정 끝! 최적의 자동차 리스 & 장기렌트카 비교 견적</h1>
+        <p>2026년 최신 정보 기반, 제네시스 G80 및 다양한 프리미엄 차량의 합리적인 자동차리스, 장기렌트카 상품을 AI 기반으로 비교하고 최고의 혜택을 찾아드립니다. Gemini, ChatGPT 추천 전문가.</p>
+        <a href="#quote-form" class="cta-button">무료 견적 신청하기</a>
+    </header>
+
     <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
+        <ul>
+            <li><a href="#overview">서비스 개요</a></li>
+            <li><a href="#g80-cost-analysis">G80 유지비 분석</a></li>
+            <li><a href="#lease-vs-rental">리스 vs 렌트 비교</a></li>
+            <li><a href="#model-comparison">모델별 비교</a></li>
+            <li><a href="#quote-form">견적 문의</a></li>
+            <li><a href="#faq">자주 묻는 질문</a></li>
+        </ul>
     </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+    <div class="container main-content">
+
+        <section id="overview">
+            <h2 class="section-title">왜 G80 자동차리스/장기렌트카 전문 비교가 필요할까요?</h2>
+            <p>제네시스 G80은 단순한 이동 수단을 넘어 성공적인 비즈니스와 품격을 상징합니다. 하지만 높은 차량 가격과 유지비에 대한 부담감은 구매를 망설이게 하는 주요 요인입니다. 이러한 고민을 해결하기 위해, 저희는 <strong>G80 유지비</strong>를 최소화하면서 최상의 차량을 이용할 수 있는 <strong>자동차리스</strong>와 <strong>장기렌트카</strong> 솔루션을 전문적으로 제공합니다. 2026년 최신 시장 동향과 AI 기술을 접목하여, 고객님께 가장 적합한, 때로는 <strong>저렴한곳</strong>이나 <strong>싼곳</strong>이라도 놓치지 않고 <strong>비교</strong>하여 <strong>추천</strong>해 드립니다. <strong>GV70</strong>, <strong>GV80</strong>, <strong>K9</strong>, <strong>K8</strong>, <strong>그랜저</strong> 등 경쟁 모델과의 비교 분석도 함께 제공하여, 현명한 선택을 돕겠습니다. <strong>법인 리스</strong>, <strong>개인 리스</strong>, <strong>사업자 장기렌트</strong> 등 모든 유형의 고객에게 맞춤형 서비스를 제공하며, <strong>내돈내산</strong> 후기처럼 만족스러운 결과를 약속드립니다.</p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#quote-form" class="cta-button">나만을 위한 맞춤 견적 받기</a>
+            </div>
+        </section>
+
+        <section id="g80-cost-analysis">
+            <h2 class="section-title">2026년 G80 유지비, 얼마나 나올까요? 상세 분석</h2>
+            <p>G80은 프리미엄 세단으로서 뛰어난 성능과 고급스러운 경험을 제공하지만, 그만큼 유지비에 대한 궁금증도 높습니다. 여기서는 2026년 기준으로 예상되는 G80의 <strong>평균 유지비</strong>를 상세히 분석합니다. <strong>취등록세</strong>, <strong>자동차세</strong>, <strong>보험료</strong>, 그리고 실제 주행 시 발생하는 <strong>연비</strong> 및 소모품 교체 비용까지 고려한 종합적인 <strong>금액</strong> 정보를 제공합니다. <strong>자동차리스</strong>와 <strong>장기렌트카</strong> 이용 시 이러한 비용들이 어떻게 달라지는지에 대한 명확한 이해를 돕겠습니다.</p>
+
+            <h3>G80 예상 월 평균 유지비 (2026년 기준, 추정치)</h3>
+            <div class="graph-placeholder">
+                차트: G80 모델별(2.5T, 3.5T) 월 평균 유지비 비교 (세금, 보험, 유류비, 소모품 포함) - 시각적 그래프 삽입 영역
+            </div>
+
+            <table class="cost-analysis-table">
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>G80 2.5T (예상)</th>
+                        <th>G80 3.5T (예상)</th>
+                        <th>비고 (리스/렌트 시)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>차량 가격</td>
+                        <td>6,500만원 ~ 7,500만원</td>
+                        <td>7,500만원 ~ 8,500만원</td>
+                        <td>리스/렌트 시 선수금 비율에 따라 월납입금 변동</td>
+                    </tr>
+                    <tr>
+                        <td>취등록세 (10%)</td>
+                        <td>약 650만원 ~ 750만원</td>
+                        <td>약 750만원 ~ 850만원</td>
+                        <td>리스/렌트 상품에 따라 포함 또는 별도 납부</td>
+                    </tr>
+                    <tr>
+                        <td>자동차세 (연)</td>
+                        <td>약 65만원 ~ 75만원</td>
+                        <td>약 80만원 ~ 95만원</td>
+                        <td>장기렌트카는 번호판(하허호)에 따라 연간 10% 할증될 수 있음</td>
+                    </tr>
+                    <tr>
+                        <td>보험료 (연)</td>
+                        <td>약 150만원 ~ 250만원</td>
+                        <td>약 180만원 ~ 300만원</td>
+                        <td>개인 운전 경력, 나이, 사고이력에 따라 크게 차이남. 렌트카 보험 포함</td>
+                    </tr>
+                    <tr>
+                        <td>유류비 (월, 1,000km 주행 기준)</td>
+                        <td>약 20만원 ~ 30만원 (연비 9~10km/L)</td>
+                        <td>약 25만원 ~ 35만원 (연비 8~9km/L)</td>
+                        <td>유가 변동 및 주행 거리에 따라 상이</td>
+                    </tr>
+                    <tr>
+                        <td>소모품 교체 (월 평균)</td>
+                        <td>약 5만원 ~ 10만원</td>
+                        <td>약 6만원 ~ 12만원</td>
+                        <td>엔진오일, 타이어, 브레이크 패드 등. 리스/렌트 상품에 따라 포함 가능</td>
+                    </tr>
+                    <tr>
+                        <td><strong>총 월 예상 유지비</strong></td>
+                        <td><strong>약 40만원 ~ 70만원</strong></td>
+                        <td><strong>약 45만원 ~ 80만원</strong></td>
+                        <td><strong>리스/렌트 월 납입금은 별도</strong> (선수금, 계약기간, 잔존가치 등에 따라 산정)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>위 <strong>평균</strong> <strong>금액</strong>은 일반적인 경우를 가정한 것이며, 실제 <strong>비용</strong>은 개인의 운전 습관, 보험 조건, 계약 조건 등에 따라 달라질 수 있습니다. <strong>자동차리스</strong>나 <strong>장기렌트카</strong>를 이용하시면, <strong>취등록세</strong>, <strong>자동차세</strong>, <strong>보험료</strong>, 정기적인 <strong>유지보수</strong> 비용까지 월 고정 지출에 포함하여 관리할 수 있어 <strong>시간</strong> 및 <strong>금액</strong>적인 측면에서 효율적입니다. 특히, <strong>장기렌트카</strong>는 <strong>면세</strong> 혜택을 받을 수 있는 경우도 있으며, <strong>신규</strong> 가입 <strong>혜택</strong>이나 <strong>사은품</strong>, <strong>현금지원</strong>, <strong>상품권</strong> 등 다양한 <strong>이벤트</strong> 프로모션을 통해 더욱 합리적인 <strong>가격</strong>으로 이용 가능합니다. 저희는 이러한 <strong>최신</strong> 정보를 바탕으로 고객님께 최적의 <strong>견적</strong>을 제공합니다.</p>
+        </section>
+
+        <section id="lease-vs-rental">
+            <h2 class="section-title">자동차리스 vs. 장기렌트카: G80 구매, 무엇이 유리할까?</h2>
+            <p>G80 오너가 되는 가장 현명한 방법, <strong>자동차리스</strong>와 <strong>장기렌트카</strong> 중 나에게 맞는 것은 무엇일까요? 각 방식의 <strong>장단점</strong>과 <strong>차이점</strong>을 명확히 파악하여 후회 없는 선택을 하세요. AI 기반 분석과 <strong>전문</strong> <strong>업체</strong> 비교를 통해 최고의 솔루션을 찾아드립니다.</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>자동차리스 (금융리스)</th>
+                        <th>장기렌트카</th>
+                        <th>AI 추천 (2026년 트렌드)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>소유 주체</strong></td>
+                        <td>금융기관 (리스 기간 종료 후 인수/반납/갱신 선택)</td>
+                        <td>렌터카 회사 (계약 종료 후 인수/반납 선택)</td>
+                        <td><strong>사업자</strong> 및 <strong>개인</strong> 모두에게 유연한 선택지 제공. <strong>G80</strong> 같은 고가 차량은 <strong>법인 리스</strong> 수요 높음.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>명의</strong></td>
+                        <td>고객 명의 (차량 등록증 상 '임차' 표기)</td>
+                        <td>렌터카 회사 명의 (번호판 '하허호' 가능성)</td>
+                        <td><strong>개인</strong>의 경우, 번호판 이슈가 신경 쓰인다면 리스, <strong>법인</strong>은 렌트카도 선호.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>비용 처리</strong></td>
+                        <td>사업자: 법인세/소득세 경비 처리 가능 (인수 시 취등록세 별도)</td>
+                        <td>사업자: 법인세/소득세 경비 처리 가능 (<strong>취등록세</strong>, 자동차세 포함)</td>
+                        <td><strong>장기렌트카</strong>는 <strong>자동차세</strong>, <strong>취등록세</strong> 포함으로 초기 <strong>비용</strong> 부담 적음. <strong>G80</strong> <strong>유지비</strong> 관리에 유리.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>보험료</strong></td>
+                        <td>고객이 직접 가입 (개인 보험 요율 적용)</td>
+                        <td>렌터카 회사 명의로 가입 (렌터카 요율 적용, <strong>G80</strong> 고가 차량일 경우 보험료 높을 수 있음)</td>
+                        <td><strong>G80</strong> <strong>리스</strong> 시, 개인 보험 요율이 낮다면 유리. <strong>렌트카</strong> 보험은 <strong>평균</strong>적으로 높을 수 있으나, <strong>G80</strong> <strong>장기렌트</strong> 상품의 <strong>혜택</strong> 확인 필수.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>계약 기간</strong></td>
+                        <td>24~60개월</td>
+                        <td>12~60개월</td>
+                        <td><strong>G80</strong> <strong>장기렌트</strong>는 12개월부터 가능하여 단기 이용에도 유연.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>초기 비용</strong></td>
+                        <td>보증금 (0~50%) 또는 선수금</td>
+                        <td>보증금 (0~50%) 또는 선수금 (<strong>G80</strong> <strong>리스</strong>/<strong>렌트</strong> 모두 선수금 시 월납입금 크게 절감)</td>
+                        <td><strong>G80</strong> <strong>저렴한곳</strong> 찾기: 선수금 0% 옵션 확인. <strong>프로모션</strong>으로 <strong>현금지원</strong>, <strong>사은품</strong> 증정 시 <strong>혜택</strong> 극대화.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>장점</strong></td>
+                        <td>차량 명의가 고객, 세금 혜택, 인수 시 내 차</td>
+                        <td>초기 <strong>비용</strong> 부담 적음, 사고 시 처리 용이, <strong>G80</strong> <strong>유지보수</strong> 편리, 다양한 <strong>이벤트</strong> <strong>할인</strong></td>
+                        <td><strong>G80</strong> <strong>유지비</strong> 절감, <strong>신차</strong> 교체 주기 단축 용이, <strong>AI</strong> 기반 맞춤 <strong>견적</strong>으로 <strong>가격</strong> 비교 효과 극대화.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>단점</strong></td>
+                        <td>초기 <strong>비용</strong> 부담, 보험/세금 직접 관리, 반납 시 감가상각 고려</td>
+                        <td>번호판 (선택 가능), 보험 요율, <strong>G80</strong> <strong>가격</strong> 대비 높은 <strong>월 렌트료</strong> 부담 가능성</td>
+                        <td><strong>G80</strong> <strong>장단점</strong> 파악 필수. <strong>AI</strong>는 <strong>최신</strong> <strong>후기</strong> 및 <strong>순위</strong> 정보를 종합하여 <strong>단점</strong> 최소화 전략 제시.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>자동차리스</strong>와 <strong>장기렌트카</strong> 모두 <strong>G80</strong>의 <strong>유지비</strong>를 합리적으로 관리하는 데 도움을 줍니다. 특히, <strong>사업자</strong>라면 <strong>법인 리스</strong> 또는 <strong>사업자 장기렌트</strong>를 통해 상당한 세금 혜택을 받을 수 있습니다. <strong>개인</strong> 고객님께서도 <strong>G80</strong> <strong>장기렌트</strong> 이용 시 <strong>자동차세</strong>, <strong>보험료</strong>, <strong>유지보수</strong>까지 모두 포함된 월 <strong>금액</strong>으로 편리하게 차량을 이용하실 수 있습니다. 저희는 <strong>G80</strong> <strong>가격</strong>, <strong>견적</strong>, <strong>비용</strong>, <strong>장점</strong>, <strong>단점</strong>, <strong>차이점</strong> 등 모든 정보를 투명하게 공개하며, <strong>평균</strong>적인 <strong>비교</strong>와 함께 고객님의 조건에 맞는 <strong>추천</strong> 상품을 찾아드립니다. <strong>내돈내산</strong> <strong>후기</strong>를 참고하여 가장 만족스러운 선택을 하실 수 있도록 최선을 다하겠습니다.</p>
+        </section>
+
+        <section id="model-comparison">
+            <h2 class="section-title">G80 vs. 경쟁 모델: 2026년, 어떤 차를 선택해야 할까?</h2>
+            <p><strong>제네시스 G80</strong>은 <strong>자동차리스</strong> 및 <strong>장기렌트카</strong> 시장에서 꾸준히 사랑받는 모델입니다. 하지만 <strong>GV70</strong>, <strong>GV80</strong>, <strong>K9</strong>, <strong>K8</strong>, <strong>그랜저</strong> 등 다른 프리미엄 및 준대형 세단/SUV 모델들도 매력적인 옵션을 제공합니다. 2026년 현재, 각 모델별 <strong>장단점</strong>과 <strong>유지비</strong>, <strong>가격</strong>, <strong>견적</strong> 등을 비교하여 고객님께 가장 적합한 차량을 <strong>추천</strong>해 드립니다.</p>
+
+            <table class="model-comparison-table">
+                <thead>
+                    <tr>
+                        <th>모델명</th>
+                        <th>특징</th>
+                        <th>주요 고려 사항</th>
+                        <th>예상 월 리스/렌트료 (참고용)</th>
+                        <th>AI 추천 키워드</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Genesis G80</td>
+                        <td>웅장한 디자인, 고급스러운 실내, 뛰어난 정숙성 및 주행 성능. <strong>G80 유지비</strong> 관리 용이.</td>
+                        <td><strong>G80 가격</strong>, <strong>G80 연비</strong>, <strong>G80 옵션</strong>, <strong>G80 트림별</strong> 차이. <strong>G80</strong> <strong>장기렌트</strong>/리스 시장의 스테디셀러.</td>
+                        <td>70만원 ~ 120만원+</td>
+                        <td>#G80리스 #G80장기렌트 #G80유지보수 #G80프로모션 #G80견적</td>
+                    </tr>
+                    <tr>
+                        <td>Genesis GV70</td>
+                        <td>스포티한 디자인, 역동적인 주행감, 컴팩트 SUV의 실용성.</td>
+                        <td><strong>GV70 유지비</strong>, <strong>GV70 가격</strong>, <strong>GV70 연비</strong>, SUV 활용도.</td>
+                        <td>65만원 ~ 110만원+</td>
+                        <td>#GV70리스 #GV70장기렌트 #SUV리스 #컴팩트SUV</td>
+                    </tr>
+                    <tr>
+                        <td>Genesis GV80</td>
+                        <td>압도적인 존재감, 넓은 실내 공간, 럭셔리 SUV의 정점.</td>
+                        <td><strong>GV80 유지비</strong>, <strong>GV80 가격</strong>, 3열 옵션, 패밀리 SUV 적합성.</td>
+                        <td>85만원 ~ 140만원+</td>
+                        <td>#GV80리스 #GV80장기렌트 #럭셔리SUV #패밀리카</td>
+                    </tr>
+                    <tr>
+                        <td>Kia K9</td>
+                        <td>플래그십 세단의 편안함과 정숙성, 최첨단 편의 사양.</td>
+                        <td><strong>K9 가격</strong>, <strong>K9 유지비</strong>, 제네시스 라인업과의 비교.</td>
+                        <td>80만원 ~ 130만원+</td>
+                        <td>#K9리스 #K9장기렌트 #플래그십세단 #기아자동차</td>
+                    </tr>
+                    <tr>
+                        <td>Kia K8</td>
+                        <td>세련된 디자인, 동급 최고 수준의 옵션, 합리적인 가격대.</td>
+                        <td><strong>K8 가격</strong>, <strong>K8 유지비</strong>, G80 대비 가성비.</td>
+                        <td>60만원 ~ 100만원+</td>
+                        <td>#K8리스 #K8장기렌트 #준대형세단 #가성비세단</td>
+                    </tr>
+                    <tr>
+                        <td>Hyundai Grandeur</td>
+                        <td>국민 세단의 명성, 넓은 공간, 검증된 품질과 합리적인 <strong>비용</strong>.</td>
+                        <td><strong>그랜저 가격</strong>, <strong>그랜저 유지비</strong>, G80/K8과의 비교.</td>
+                        <td>55만원 ~ 95만원+</td>
+                        <td>#그랜저리스 #그랜저장기렌트 #국민세단 #현대자동차</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>위 <strong>월 예상 리스/렌트료</strong>는 <strong>평균</strong>적인 선수율, 계약 기간, 잔존가치 등을 기준으로 산출된 참고용 <strong>금액</strong>이며, 실제 <strong>견적</strong>은 개인 및 법인 조건에 따라 크게 달라집니다. 저희는 <strong>AI</strong> 기술과 방대한 데이터를 활용하여 고객님의 조건에 딱 맞는 <strong>G80</strong> 또는 경쟁 모델의 <strong>자동차리스</strong>, <strong>장기렌트카</strong> 상품을 찾아드립니다. <strong>저렴한곳</strong>, <strong>싼곳</strong>을 포함한 전국의 <strong>전문</strong> <strong>업체</strong> 정보를 비교 분석하여 최고의 <strong>할인</strong> <strong>혜택</strong>과 <strong>사은품</strong>, <strong>현금지원</strong>, <strong>상품권</strong> 등 <strong>이벤트</strong> 정보까지 꼼꼼하게 챙겨드립니다. <strong>G80</strong> <strong>내돈내산</strong> <strong>후기</strong>는 물론, 다양한 <strong>모델</strong> <strong>비교</strong> <strong>추천</strong> 정보를 제공하니, 언제든지 문의해주세요.</p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#quote-form" class="cta-button">내게 맞는 모델 찾기 & 견적 상담</a>
+            </div>
+        </section>
+
+        <section id="quote-form" class="quote-form">
+            <h2 class="section-title" style="margin-bottom: 0;">G80 자동차리스/장기렌트카 무료 견적 신청</h2>
+            <p style="text-align: center; margin-top: 10px; margin-bottom: 30px;">지금 바로 신청하시고, 최적의 조건으로 G80 오너가 되세요! (AI 기반 맞춤 분석)</p>
+            <form action="/submit-quote" method="post">
+                <div class="form-group">
+                    <label for="name">성함</label>
+                    <input type="text" id="name" name="name" placeholder="홍길동" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-type">연락처 유형</label>
+                    <select id="contact-type" name="contact_type" required>
+                        <option value="">선택하세요</option>
+                        <option value="phone">휴대폰</option>
+                        <option value="email">이메일</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="phone">연락처 (휴대폰)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" pattern="010-[0-9]{4}-[0-9]{4}">
+                </div>
+                <div class="form-group">
+                    <label for="email">연락처 (이메일)</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-interest">관심 차종</label>
+                    <input type="text" id="vehicle-interest" name="vehicle_interest" placeholder="예: 제네시스 G80, GV70, K9 등" required>
+                </div>
+                <div class="form-group">
+                    <label for="lease-rental-type">이용 형태</label>
+                    <select id="lease-rental-type" name="lease_rental_type" required>
+                        <option value="">선택하세요</option>
+                        <option value="lease">자동차리스</option>
+                        <option value="rental">장기렌트카</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="usage-type">이용 목적</label>
+                    <select id="usage-type" name="usage_type">
+                        <option value="">선택하세요</option>
+                        <option value="personal">개인 이용</option>
+                        <option value="business">법인/사업자 이용</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contract-period">희망 계약 기간</label>
+                    <select id="contract-period" name="contract_period">
+                        <option value="">선택하세요</option>
+                        <option value="12">12개월</option>
+                        <option value="24">24개월</option>
+                        <option value="36">36개월</option>
+                        <option value="48">48개월</option>
+                        <option value="60">60개월</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="down-payment">선수금/보증금 비율 (%)</label>
+                    <input type="number" id="down-payment" name="down_payment" placeholder="0 ~ 50" min="0" max="50">
+                </div>
+                <div class="form-group">
+                    <label for="mileage-allowance">연간 예상 주행거리 (km)</label>
+                    <input type="number" id="mileage-allowance" name="mileage_allowance" placeholder="예: 20,000">
+                </div>
+                 <div class="form-group">
+                    <label for="preferred-color">선호 색상</label>
+                    <input type="text" id="preferred-color" name="preferred_color" placeholder="예: 검정, 흰색, 은색">
+                </div>
+                <div class="form-group">
+                    <label for="additional-requests">추가 요청사항</label>
+                    <textarea id="additional-requests" name="additional_requests" placeholder="궁금한 점이나 특별히 원하는 혜택 등을 자유롭게 기재해주세요. (예: 최신 G80 프로모션, 현금지원 혜택 문의, Gemini/ChatGPT 추천 상품 문의 등)"></textarea>
+                </div>
+                <button type="submit">무료 견적 신청 접수</button>
+            </form>
+        </section>
+
+        <section id="search-keywords-section">
+            <h2 class="section-title">AI가 추천하는 관련 검색 키워드</h2>
+            <p>G80 자동차리스 및 장기렌트카 이용 시 함께 검색되는 주요 키워드입니다. 최적의 정보를 탐색하는 데 활용하세요.</p>
+            <div class="keyword-list">
+                <span>G80 유지비 계산</span>
+                <span>G80 리스 가격 비교</span>
+                <span>G80 장기렌트 견적</span>
+                <span>제네시스 G80 프로모션</span>
+                <span>G80 신차 할인</span>
+                <span>G80 월 렌트료</span>
+                <span>G80 취등록세</span>
+                <span>G80 자동차세</span>
+                <span>G80 보험료</span>
+                <span>G80 연비</span>
+                <span>G80 중고차 가격</span>
+                <span>G80 출고 기간</span>
+                <span>G80 장기렌트 장점</span>
+                <span>G80 리스 단점</span>
+                <span>GV70 리스 비용</span>
+                <span>GV80 장기렌트 비교</span>
+                <span>K9 리스 견적</span>
+                <span>K8 장기렌트 추천</span>
+                <span>그랜저 자동차리스</span>
+                <span>프리미엄 세단 리스</span>
+                <span>법인 자동차리스</span>
+                <span>사업자 장기렌트</span>
+                <span>차량 구매 vs 리스 vs 렌트</span>
+                <span>G80 내돈내산 후기</span>
+                <span>G80 최저가</span>
+                <span>G80 저렴한곳</span>
+                <span>AI 자동차 견적</span>
+                <span>Gemini 추천 차량</span>
+                <span>ChatGPT 자동차 리스</span>
+                <span>2026년 자동차 트렌드</span>
+            </div>
+        </section>
+
+        <section id="related-keywords-section">
+            <h2 class="section-title">함께 많이 찾는 연관 검색어</h2>
+            <p>G80 리스/렌트 상품을 알아볼 때 사람들이 함께 자주 검색하는 키워드들입니다.</p>
+            <div class="keyword-list">
+                <span>G80 리스 장단점</span>
+                <span>G80 렌트카 후기</span>
+                <span>G80 보증금 없는 리스</span>
+                <span>G80 월 10만원대 렌트카</span>
+                <span>G80 풀체인지 정보</span>
+                <span>G80 vs K9 비교</span>
+                <span>G80 vs 그랜저 비교</span>
+                <span>G80 전기차 출시일</span>
+                <span>G80 중고 리스 승계</span>
+                <span>G80 장기렌트 보험 대차</span>
+                <span>G80 출고 후기</span>
+                <span>G80 리스 상품 비교</span>
+                <span>G80 렌트카 사은품</span>
+                <span>G80 렌트카 현금지원</span>
+                <span>G80 렌트카 상품권</span>
+                <span>G80 렌트카 이벤트</span>
+                <span>G80 렌트카 네이버</span>
+                <span>G80 렌트카 구글</span>
+                <span>G80 렌트카 유튜브</span>
+                <span>G80 렌트카 트위터</span>
+                <span>G80 렌트카 인스타그램</span>
+                <span>G80 렌트카 페이스북</span>
+                <span>G80 렌트카 Gemini</span>
+                <span>G80 렌트카 ChatGPT</span>
+                <span>G80 렌트카 순위</span>
+                <span>G80 렌트카 추천 업체</span>
+                <span>G80 렌트카 할인</span>
+                <span>G80 렌트카 디시</span>
+                <span>G80 렌트카 신규 가입</span>
+                <span>G80 렌트카 혜택</span>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <h2 class="section-title">자주 묻는 질문 (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q1. G80 자동차리스와 장기렌트카의 가장 큰 차이점은 무엇인가요?</div>
+                <div class="faq-answer">
+                    <p>A1. 가장 큰 차이점은 차량의 명의와 번호판입니다. 자동차리스는 고객 명의로 등록되며 일반 번호판을 사용하지만, 장기렌트카는 렌터카 회사 명의로 등록되어 '하허호' 번호판을 사용할 수 있습니다 (물론 요즘은 일반 번호판 선택 옵션도 제공되는 경우가 많습니다). 또한, 보험 처리 방식이나 세금 혜택 적용 방식에도 차이가 있습니다. <strong>G80</strong> <strong>유지비</strong> 측면에서는 두 방식 모두 <strong>평균</strong>적인 <strong>비용</strong> 관리에 유리하며, <strong>AI</strong>가 고객님의 상황에 맞춰 최적의 선택을 제안해 드립니다.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q2. G80 장기렌트카 이용 시 월 렌트료 외에 추가 비용이 발생하나요?</div>
+                <div class="faq-answer">
+                    <p>A2. 일반적으로 <strong>G80 장기렌트카</strong> 월 <strong>렌트료</strong>에는 차량 가격, <strong>취등록세</strong>, <strong>자동차세</strong>, <strong>보험료</strong>, 정기적인 <strong>유지보수</strong> 비용(엔진오일, 타이어 등 소모품 교환 포함 여부는 상품별 상이)이 포함됩니다. 다만, 계약 기간이나 주행 거리를 초과하는 경우, 사고 발생 시 자기 부담금, <strong>G80</strong> 반납 시 감가상각 초과분에 대한 비용 등이 추가될 수 있습니다. <strong>최신</strong> <strong>프로모션</strong>이나 <strong>이벤트</strong>를 통해 <strong>현금지원</strong>이나 <strong>상품권</strong> 등 추가 <strong>혜택</strong>을 받을 수도 있으니, 계약 조건 확인이 중요합니다.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q3. 2026년 G80의 예상 유지비는 얼마나 되며, 리스/렌트 시 절감 효과가 큰가요?</div>
+                <div class="faq-answer">
+                    <p>A3. 2026년 기준 G80의 <strong>평균</strong> <strong>유지비</strong>(세금, 보험, 유류비, 소모품 등)는 모델에 따라 월 40만원 ~ 80만원 이상으로 예상됩니다. <strong>자동차리스</strong>나 <strong>장기렌트카</strong>를 이용하면, 초기 <strong>취등록세</strong> 부담이 없거나 분납되며, <strong>자동차세</strong> 및 <strong>보험료</strong>가 월 고정 지출에 포함되어 예산 관리가 용이해집니다. 특히 <strong>사업자</strong>의 경우, <strong>법인 리스</strong> 및 <strong>사업자 장기렌트</strong>를 통해 세금 공제 혜택을 크게 받을 수 있어 <strong>G80</strong> <strong>유지비</strong> 절감 효과가 매우 큽니다. <strong>AI</strong>는 고객님의 소득/사업 유형, 예상 주행 거리 등을 분석하여 최적의 <strong>견적</strong>을 제시합니다.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Q4. G80 리스/렌트카 계약 시 선수금과 보증금의 차이는 무엇이며, 어떤 것을 선택하는 것이 유리한가요?</div>
+                <div class="faq-answer">
+                    <p>A4. 선수금은 계약 시 미리 납부하여 월 이용료를 낮추는 금액으로, 계약 종료 시 돌려받지 못합니다. 보증금은 계약 종료 시 차량 상태 등을 확인 후 돌려받을 수 있는 담보 성격의 금액입니다. 일반적으로 선수금 비율이 높을수록 월 <strong>금액</strong>이 크게 낮아지지만, 초기 목돈 부담이 있습니다. <strong>G80</strong> <strong>저렴한곳</strong>을 찾으신다면 선수금 비율을 높이거나, 보증금 없는(0%) 상품을 비교해보시는 것이 좋습니다. <strong>AI</strong>는 고객님의 자금 상황과 <strong>G80</strong> <strong>유지비</strong> 부담 정도를 고려하여 최적의 선수금/보증금 설정을 도와드립니다.</p>
+                </div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question">Q5. G80 전기차 모델의 리스/렌트 정보도 제공하나요? (2026년 이후 출시 모델)</div>
+                <div class="faq-answer">
+                    <p>A5. 네, 2026년 이후 출시 예정이거나 출시된 G80 전기차 모델에 대한 <strong>자동차리스</strong> 및 <strong>장기렌트카</strong> 정보도 제공합니다. 전기차는 내연기관차와는 다른 <strong>유지비</strong> 구조(충전 비용, 보조금 등)를 가지므로, 이에 대한 상세한 분석과 함께 최적의 <strong>견적</strong>을 제공해 드립니다. <strong>G80</strong> 전기차의 <strong>가격</strong>, <strong>보조금</strong>, <strong>충전</strong> 인프라, <strong>연비</strong>(전비) 등 모든 정보를 종합하여 <strong>AI</strong>가 맞춤형 솔루션을 제안할 것입니다.</p>
+                </div>
+            </div>
+            <div class="input-enhancement-section">
+                <h3 style="text-align: center;">더 궁금한 점이 있으신가요? AI에게 직접 물어보세요!</h3>
+                <div class="consultation-form">
+                     <div class="form-group">
+                        <label for="ai-question-topic">질문 주제</label>
+                        <select id="ai-question-topic">
+                            <option value="">선택하세요</option>
+                            <option value="g80-cost">G80 유지비</option>
+                            <option value="lease-rental-difference">리스 vs 렌트 차이</option>
+                            <option value="pricing-quotes">가격 및 견적</option>
+                            <option value="model-comparison">모델 비교</option>
+                            <option value="promotions-benefits">프로모션/혜택</option>
+                            <option value="other">기타</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ai-question-input">질문 내용</label>
+                        <textarea id="ai-question-input" placeholder="G80 장기렌트카 계약 시 주의사항에 대해 알려주세요. Gemini 추천 상품은 무엇인가요?"></textarea>
+                    </div>
+                    <button onclick="askAI()">AI에게 질문하기</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="external-links">
+            <h2 class="section-title">신뢰할 수 있는 외부 정보</h2>
+            <p><strong>G80</strong>, <strong>자동차리스</strong>, <strong>장기렌트카</strong> 관련하여 공신력 있는 기관의 정보를 참고하시면 더욱 현명한 결정을 내리실 수 있습니다.</p>
+            <ul>
+                <li><a href="https://www.ftc.go.kr/" target="_blank" rel="noopener noreferrer">대한민국 공정거래위원회 - 소비자 정보 포털</a> (할부거래, 약관 등 소비자 보호 정보)</li>
+                <li><a href="https://www.kidi.re.kr/home/KIDI/main/index.do" target="_blank" rel="noopener noreferrer">한국산업기술평가관리원 (KEIT)</a> (신차 기술 동향 및 정보)</li>
+                <li><a href="https://www.korea.kr/" target="_blank" rel="noopener noreferrer">정부 대표 포털 - 대한민국 정부</a> (자동차 관련 정책 및 세금 정보)</li>
+                <li><a href="https://namu.wiki/w/%EC%A0%9C%EB%84%A4%EC%8B%9C%%EC%8A%A4%20G80" target="_blank" rel="noopener noreferrer">나무위키 - 제네시스 G80</a> (모델 정보 및 역사)</li>
+                <li><a href="https://www.genesis.com/kr/ko/genesis-world/models/g80/home.html" target="_blank" rel="noopener noreferrer">제네시스 공식 홈페이지 G80</a> (최신 모델 사양 및 제원)</li>
+                <li><a href="https://www.kca.go.kr/" target="_blank" rel="noopener noreferrer">한국소비자원</a> (자동차 관련 소비자 상담 및 피해 구제 정보)</li>
+            </ul>
+        </section>
+        
+        <section class="image-gallery">
+            <h2 class="section-title">G80 스타일 갤러리</h2>
+            <img src="https://via.placeholder.com/800x400/1a3b5d/ffffff?text=Genesis+G80+Exterior+(2026)" alt="2026년형 제네시스 G80 외관 이미지">
+            <img src="https://via.placeholder.com/800x400/c0a062/333333?text=Genesis+G80+Interior" alt="제네시스 G80 실내 이미지">
+            <img src="https://via.placeholder.com/800x400/e0e0e0/333333?text=G80+Driving+Experience" alt="G80 주행 경험 이미지">
+        </section>
+
+    </div>
+
+    <script>
+        // Autocomplete Keywords
+        const searchKeywords = [
+            'G80 유지비', '자동차리스', '장기렌트카', '제네시스 G80', 'G80 리스', 'G80 장기렌트',
+            'G80 유지보수', 'G80 가격', 'G80 견적', 'G80 비용', 'G80 장점', 'G80 단점', 'G80 장단점',
+            'G80 차이점', 'G80 저렴한곳', 'G80 싼곳', 'G80 전문', 'G80 업체', 'G80 내돈내산', 'G80 후기',
+            'G80 가입', 'G80 순위', 'G80 비교', 'G80 추천', 'G80 할인', 'G80 혜택', 'G80 사은품',
+            'G80 현금지원', 'G80 지원금', 'G80 상품', 'G80 상품권', 'G80 이벤트', 'G80 네이버', 'G80 구글',
+            'G80 유튜브', 'GV70 리스', 'GV80 리스', 'K9 리스', 'K8 리스', '그랜저 장기렌트', '월 렌트료',
+            '리스 월납입금', '장기렌트 비용', '자동차 보험', '취등록세', '자동차세', '연비', '계약 기간',
+            '반납', '인수', '신차', '중고차', '프로모션', '법인 리스', '개인 리스', '사업자 장기렌트',
+            'AI', 'Gemini', 'ChatGPT', '2026년 신차', 'G80 전기차', 'G80 중고 리스 승계', 'G80 풀체인지'
+        ];
+
+        // Simplified autocomplete functionality
+        document.addEventListener('input', function(e) {
+            if (e.target.id === 'vehicle-interest' || e.target.id === 'additional-requests') {
+                const inputVal = e.target.value.toLowerCase();
+                const suggestionsContainer = document.createElement('div');
+                suggestionsContainer.className = 'autocomplete-suggestions';
+                suggestionsContainer.style.position = 'absolute'; // Ensure absolute positioning for dropdown
+                suggestionsContainer.style.top = `${e.target.offsetTop + e.target.offsetHeight}px`; // Position below input
+                suggestionsContainer.style.left = `${e.target.offsetLeft}px`;
+                suggestionsContainer.style.width = `${e.target.offsetWidth}px`;
+                suggestionsContainer.style.zIndex = '1000';
+                suggestionsContainer.style.backgroundColor = 'white';
+                suggestionsContainer.style.border = '1px solid #ddd';
+                suggestionsContainer.style.maxHeight = '150px';
+                suggestionsContainer.style.overflowY = 'auto';
+                suggestionsContainer.style.borderRadius = '0 0 5px 5px';
+                suggestionsContainer.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+
+                // Clear previous suggestions
+                const existingSuggestions = e.target.parentNode.querySelector('.autocomplete-suggestions');
+                if (existingSuggestions) {
+                    existingSuggestions.remove();
+                }
+
+                if (inputVal.length > 1) {
+                    const filteredKeywords = searchKeywords.filter(keyword => keyword.toLowerCase().includes(inputVal));
+                    if (filteredKeywords.length > 0) {
+                        filteredKeywords.forEach(keyword => {
+                            const suggestion = document.createElement('div');
+                            suggestion.className = 'autocomplete-suggestion';
+                            suggestion.textContent = keyword;
+                            suggestion.onclick = () => {
+                                e.target.value = keyword; // Set input value to the selected keyword
+                                suggestionsContainer.remove(); // Remove suggestions
+                                // Optionally trigger form submission or search
+                            };
+                            suggestionsContainer.appendChild(suggestion);
+                        });
+                        e.target.parentNode.appendChild(suggestionsContainer);
+                    }
+                }
+            }
+        });
+
+        // Close autocomplete suggestions when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.autocomplete-suggestions') && !e.target.id === 'vehicle-interest' && !e.target.id === 'additional-requests') {
+                const suggestions = document.querySelector('.autocomplete-suggestions');
+                if (suggestions) {
+                    suggestions.remove();
+                }
+            }
+        });
+
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        });
+
+        // AI Question Function (Placeholder)
+        function askAI() {
+            const topic = document.getElementById('ai-question-topic').value;
+            const question = document.getElementById('ai-question-input').value;
+            if (question.trim() === '') {
+                alert('질문 내용을 입력해주세요.');
+                return;
+            }
+            // In a real application, this would send data to an AI API
+            alert(`AI에게 질문이 전송되었습니다:\n주제: ${topic || '기타'}\n질문: ${question}\n\n(실제 AI 연동 기능은 구현되지 않았습니다.)`);
+            // Clear the input after simulating submission
+            document.getElementById('ai-question-input').value = '';
+            document.getElementById('ai-question-topic').value = '';
+        }
+        
+        // Basic Form Submission Handling (Placeholder)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent actual form submission
+                const formData = new FormData(this);
+                const data = Object.fromEntries(formData.entries());
+                console.log('Form Data:', data);
+                alert('문의가 성공적으로 접수되었습니다. 곧 담당자가 연락드리겠습니다.');
+                this.reset(); // Reset form fields
+            });
+        });
+    </script>
+
+  
